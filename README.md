@@ -1,8 +1,32 @@
-DDLC-3DS est un portage de Doki Doki Literature Club pour la 3DS. Ceci est une version modifiée du portage contenant un patch de traduction Français.
-DDLC-3DS + Patch FR est basé sur la version 0.3.1 de DDLC-3DS.
+# DDLC-3DS
+A Doki Doki Literature Club port for the 3DS! Programmed in Lua, running under the LovePotion framework.
 
-Doki Doki Literature Club est un jeu créer par la Team Salvato et il est disponible gratuitement ici: https://ddlc.moe/
+This port is unofficial and is not affiliated with Team Salvato. Please support the official game. You can download Doki Doki Literature Club at: http://ddlc.moe
 
-DDLC-3DS a été créer par LukeeGD et il est disponible ici: https://github.com/LukeZGD/DDLC-3DS
+This is intended to be only for 3DS systems, but it is also working on other platforms that support LÖVE or LovePotion. On those, it will still have 2 screens like the 3DS.
 
-Le patch FR utilisé est disponible ici: https://www.yarashii.fr/2018/01/doki-doki-literature-club-vn-fr/
+**Locations of save files:**
+
+| Platform | Location                            |
+|----------|-------------------------------------|
+| 3DS      | sdmc:/3ds/data/LovePotion/DDLC-3DS/ |
+| Switch   | sdmc:/switch/DDLC-3DS/              |
+| Windows  | %appdata%\LOVE\DDLC-3DS\            |
+
+You can reset the save data and start over by deleting all of the files on that folder. This is also mentioned in the help menu.
+
+New 3DS/2DS users should disable L2 Cache before playing this.
+
+### Building (3DS):
+- You cannot build DDLC-3DS on your own. you have to add it to LovePotion 1.0.9, replace the makefile and meta files, and compile it with the game folder.
+
+### Running:
+- 3DSX - Download the source code (zip) from the [releases](https://github.com/LukeZGD/DDLC-3DS/releases), then extract the folder with the .3dsx and the game folder in the 3ds folder of your SD card. You can now run this with the homebrew launcher. (This is only tested in Rosalina homebrew launcher, may or may not work in *hax)
+
+- CIA - Install the .cia file from the [releases](https://github.com/LukeZGD/DDLC-3DS/releases) using any CIA installer of your choice.
+
+- Switch - [Running LovePotion (Switch)](https://github.com/TurtleP/LovePotion/wiki/Running-(Switch))
+
+- PC - Drag the game folder to LÖVE 0.10.2 / 11.1
+
+**Credits to TurtleP for LovePotion!**
