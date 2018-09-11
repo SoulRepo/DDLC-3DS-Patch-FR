@@ -3,174 +3,167 @@ function poem(poemname, author, continue)
 
 	if poemname == 'poem_y1' then
 		poemtext = [[
-Ghost Under the Light
+Fantôme sous la lumière
 
-The tendrils of my hair illuminate beneath the amber glow.
-Bathing.
-It must be this one.
-The last remaining streetlight to have withstood the test of time.
-the last yet to be replaced by the sickening blue-green hue of the future.
-I bathe. Calm; breathing air of the present but living in the past.
-The light flickers.
-I flicker back.]]
+Dans cet éclat ambré, mes fourches se reflètent,
+De lumière, elles baignent.
+C’est sans doute lui,
+Ce dernier lampadaire, que le temps n’a su flétrir.
+Que le futur n’a encore su teindre de son hideuse couleur turquoise.
+Je me plonge, sereine, le corps au présent, le coeur au passé.
+Une lumière s’allume.
+Je renvoie cet éclat.]]
 
 	elseif poemname == 'poem_y2' then
 		poemtext = [[
-The Raccoon
+Le raton-laveur
 
-It happened in the dead of night while I was slicing bread for a guilty snack.
-My attention was caught by the scuttering of a raccoon outside my window.
-That was, I believe, the first time I noticed my strange tendencies as an unordinary
-human.
-I gave the raccoon a piece of bread, my subconscious well aware of the consequences.
-Well aware that a raccoon that is fed will always come back for more.
-The enticing beauty of my cutting knife was the symptom.
-The bread, my hungry curiosity.
-The raccoon, an urge.]]
+Dans l’obscurité de la nuit, je tranchais le pain d’une pitance pécheresse.
+Un raton-laveur surgissant derrière ma fenêtre détourna mon attention.
+Je ressentais cet instinct humain pour la première fois, je crois bien.
+Consciente des conséquences, je tendis du pain à l’animal.
+Une fois nourri, je sus qu’il reviendrait.
+La beauté noble de mon couteau était le symptôme.
+Le pain, mon insatiable curiosité.
+L’animal, mon désir.]]
 	elseif poemname == 'poem_y2-a' then
 		poemtext = [[
-The moon increments its phase and reflects that much more light off of my cutting knife.
-The very same light that glistens in the eyes of my raccoon friend.
-I slice the bread, fresh and soft. The raccoon becomes excited.
-Or perhaps I'm merely projecting my emotions onto the newly-satisfied animal.
+La lune, prolongeant son passage, illuminait mon couteau plus que de raison.
+Cette lumière même qui se reflétait dans le regard de mon ami raton-laveur.
+Ce dernier s’excitait, me voyant trancher ce pain.
+Peut-être s’agissait-il simplement d’une projection de mes sentiments à travers sa satisfaction.
 
-The raccoon has taken to following me.
-You could say that we've gotten quite used to each other.
-The raccoon becomes hungry more and more frequently, so my bread is always handy.
-Every time I brandish my cutting knife, the raccoon shows me its excitement.
-A rush of blood. Classic Pavlovian conditioning. I slice the bread.
-And I feed myself again.]]
+Il décida de me suivre.
+Nous nous étions accoutumés l’un à l’autre.
+Plus le temps passait, plus il revenait, mon pain devenu essentiel.
+Chaque mouvement de mon couteau faisait briller son regard.
+Simple afflux de sang. Simple réflexe pavlovien. Je coupais le pain.
+Puis m’en nourrissais.]]
 	
 	elseif poemname == 'poem_y3' then
 		poemtext = [[
-Beach
+Plage
 
-A marvel millions of years in the making.
-Where the womb of Earth chaotically meets the surface.
-Under a clear blue sky, an expanse of bliss--
-But beneath gray rolling clouds, an endless enigma.
-The easiest world to get lost in
-Is one where everything can be found.]]
+De millions d’années si belles en devenir. 
+Où dans le chaos, le noyau de notre Terre embrasse la surface.
+Sous le firmament, où le bonheur s’étend
+Sous le gris des nues, où l’éternelle énigme attend
+Dans un monde de perdition, 
+Un monde où l’impossible n’est plus fiction.]]
 	elseif poemname == 'poem_y3-a' then
 		poemtext = [[
-One can only build a sand castle where the sand is wet.
-But where the sand is wet, the tide comes.
-Will it gently lick at your foundations until you give in?
-Or will a sudden wave send you crashing down in the blink of an eye?
-Either way, the outcome is the same.
-Yet we still build sand castles.]]
+Nul ne saurait bâtir un château de sable mouillé
+Sa présence annonce la venue de la marée
+Caressera-t-elle tes fondations jusqu’à leur destruction ?
+Est-ce une vague qui, le temps d’un soupir, te fera périr ?
+C’est ainsi que cela doit se finir.
+Et nous continuons à bâtir des châteaux de sable.]]
 	elseif poemname == 'poem_y3-b' then
 		poemtext = [[
-I stand where the foam wraps around my ankles.
-Where my toes squish into the sand.
-The salty air is therapeutic.
-The breeze is gentle, yet powerful.
-I sink my toes into the ultimate boundary line, tempted by the foamy
-tendrils.
-Turn back, and I abandon my peace to erode at the shore.
-Drift forward, and I return to Earth forevermore.]]
+Je me tiens ici, l’écume aux pieds,
+Les orteils dans le sol, terrés
+L’air salé est ma panacée
+La brise, tendre, demeure puissante
+Je plonge le pied, tentée par les spirales d’écume, je franchis cette ultime frontière
+Reviens-moi, et je renoncerai au repos pour m’échouer sur un rivage de souffrances
+Quitte-moi, et à la Terre, je retournerai sans appel.]]
 
 	elseif poemname == 'poem_y3b' then
 		poemtext = [[
-Ghost Under the Light pt. 2
+Fantôme sous la lumière, partie 2
 
-The tendrils of my hair illuminate beneath the amber glow.
-Bathing.
-In the distance, a blue-green light flickers.
-A lone figure crosses its path - a silhouette obstructing the eerie glow.
-My heart pounds. The silhouette grows. Closer. Closer.
-I open my umbrella, casting a shadow to shield me from visibility.
-But I am too late.
-He steps into the streetlight. I gasp and drop my umbrella.
-The light flickers. My heart pounds. He raises his arm.]]
+Dans cet éclat ambré, mes fourches se reflètent,
+De lumière, elles baignent.
+Au loin, une lumière turquoise s’allume.
+Une forme isolée croise son chemin ; Une silhouette qui bloque la lueur inquiétante.
+Mon coeur bat. La silhouette s’agrandit. Et se rapproche.
+J’ouvre mon parapluie, invoquant une ombre pour me protéger de cette visibilité.
+Mais il est trop tard.
+Il s’avance sous le lampadaire. Le souffle coupé, mon parapluie tombe.
+La lumière s’allume. Mon coeur palpite. Il lève son bras.]]
 	elseif poemname == 'poem_y3b-a' then
 		poemtext = [[
-Time stops.
+Le temps suspend son vol.
 
-The only indication of movement is the amber light flickering against
-his outstretched arm.
-The flickering light is in rhythm with the pounding of my heart.
-Teasing me for succumbing to this forbidden emotion.
-Have you ever heard of a ghost feeling warmth before?
-Giving up on understanding, I laugh.
-Understanding is overrated.
-I touch his hand. The flickering stops.
-Ghosts are blue-green. My heart is amber.]]
+Seul le reflet de lumière ambrée sur son bras tendu trahit ses mouvements.
+Cette lumière qui scintille au rythme de mon coeur
+Elle se joue de moi, victime de ces émotions taboues.
+As-tu déjà entendu parler de cette passion, semblable à une illusion ? 
+Renonçant à comprendre, je ris.
+La logique n’est que superflue.
+Je touche sa main. Son éclat prend fin.
+Les fantômes, turquoises. Mon coeur, d’ambre.]]
 
 	elseif poemname == 'poem_y22' then
 		poemtext = [[
-Wheel
+Roue
 
-A rotating wheel. Turning an axle. Grinding. Bolthead. Linear gearbox. Falling sky.
-Seven holy stakes. A docked ship. A portal to another world. A thin rope tied to a
-thick rope. A torn harness. Parabolic gearbox. Expanding universe. Time controlled
-by slipping cogwheels. Existence of God. Swimming with open water in all directions.
-Drowning. A prayer written in blood. A prayer written in time-devouring snakes with
-human eyes. A thread connecting all living human eyes. A kaleidoscope of holy stakes.
-Exponential gearbox. A sky of exploding stars. God disproving the existence of God.
-A wheel rotating in six dimensions. Forty gears and a ticking clock. A clock that
-ticks one second for every rotation of the planet. A clock that ticks forty times
-every time it ticks every second time. A bolthead of holy stakes tied to the existence
-of a docked ship to another world. A kaleidoscope of blood written in clocks.]]
+Une roue en rotation. Entrainant un essieu. Grincement. Tête de boulon. Boite de vitesses linéaire. Ciel qui s’écroule. Sept niveaux saints.
+Un bateau arrimé. Un portail vers un autre monde. Une fine corde nouée à une épaisse corde. Un harnais déchiré. Boite de vitesses parabolique.
+Univers en expansion. Temps contrôlé par des roues dentées glissantes. Existence de Dieu. Nageant en pleine mer, quelle que soit la direction.
+Se noyant. Une prière écrite avec du sang. Une prière écrite avec des serpents chronophages aux yeux humanoïdes.
+Un fil reliant tous les yeux humanoïdes vivants. Un kaléidoscope de niveaux saints. Boite de vitesses exponentielle.
+Un ciel composé d’étoiles en explosion. Dieu réfutant l’existence de Dieu. Une roue en rotation en six dimensions.
+Quarante roues dentées et le tic-tac d’une horloge. Une horloge qui tic à chaque rotation de la planète.
+Une horloge qui tic quarante fois à chaque fois qu’elle tic une fois. Une tête de boulon des niveaux saints attachée 
+à l’existence d’un bateau arrimé à un autre monde. Un kaléidoscope de sang écrit avec des horloges.]]
 	elseif poemname == 'poem_y22-a' then
 		poemtext = [[
-A time-devouring prayer connecting a sky of forty gears and open human eyes in all
-directions. Breathing gearbox. Breathing bolthead. Breathing ship. Breathing portal.
-Breathing snakes. Breathing God. Breathing blood. Breathing holy stakes. Breathing
-human eyes. Breathing time. Breathing prayer. Breathing sky. Breathing wheel.]]
+Une chronophage prière reliant un ciel de quarante roues dentées et d’yeux humanoïdes ouverts dans toutes les directions. La boite de vitesses respire. La tête de boulon respire.
+Le bateau respire. Le portail respire. Les serpents respirent. Dieu respire. Le sang respire. Les niveaux saints respirent.
+Les yeux humanoïdes respirent. Le temps respire. La prière respire. Le ciel respire. La roue respire.]]
 
 	elseif poemname == 'poem_n1' then
 		poemtext = [[
-Eagles Can Fly
+Les aigles peuvent voler
 
-Monkeys can climb
-Crickets can leap
-Horses can race
-Owls can seek
-Cheetahs can run
-Eagles can fly
-People can try
-But that's about it.]]
+Les singes peuvent grimper
+Les grillons peuvent sauter
+Les chevaux peuvent faire la course
+Les hibous peuvent chercher
+Les guépards peuvent courir
+Les aigles peuvent voler
+Les gens peuvent essayer,
+mais c’est tout.]]
 	
 	elseif poemname == 'poem_n2' then
 		poemtext = [[
-Amy Likes Spiders
+Amy aime les araignées
 
-You know what I heard about Amy?
-Amy likes spiders.
-Icky, wriggly, hairy, ugly spiders!
-That's why I'm not friends with her.
+Tu sais ce que j’ai entendu au sujet d’Amy ?
+Amy aime les araignées.
+Les araignées dégueulasses, remuantes, velues et laides !
+C’est pour ça que je ne suis pas amie avec elle.
 
-Amy has a cute singing voice.
-I heard her singing my favorite love song.
-Every time she sang the chorus, my heart would pound to the rhythm of
-the words.
-But she likes spiders.
-That's why I'm not friends with her.]]
+Amy a une jolie voix.
+Je l’ai entendue chanter ma chanson d’amour préférée.
+Chaque fois qu’elle chantait le refrain, mon coeur battait au rythme de ses mots.
+Cependant, elle aime les araignées.
+C’est pour ça que je ne suis pas amie avec elle.]]
 	elseif poemname == 'poem_n2-a' then
 		poemtext = [[
-One time, I hurt my leg really bad.
-Amy helped me up and took me to the nurse.
-I tried not to let her touch me.
-She likes spiders, so her hands are probably gross.
-That's why I'm not friends with her.
+Une fois, je me suis méchamment blessée à la jambe.
+Amy m’a aidée à me relever et m’a emmenée à l’infirmerie.
+J’ai essayé de faire en sorte qu’elle ne me touche pas.
+Elle aime les araignées, donc ses mains sont sûrement répugnantes.
+C’est pour ça que je ne suis pas amie avec elle.
 
-Amy has a lot of friends.
-I always see her talking to people.
-She probably talks about spiders.
-What if her friends start to like spiders too?
-That's why I'm not friends with her.]]
+Amy a beaucoup d’amis.
+Je la vois toujours parler à des gens.
+Elle parle sûrement d’araignées.
+Et si ses amis commençaient à parler d’araignées aussi ?
+C’est pour ça que je ne suis pas amie avec elle.]]
 	elseif poemname == 'poem_n2-b' then
 		poemtext = [[
-It doesn't matter if she has other hobbies.
-It doesn't matter if she keeps it private.
-It doesn't matter if it doesn't hurt anyone.
+Peu importe si elle a d’autres passions.
+Peu importe si elle garde ça secret.
+Peu importe si ça ne fait de mal à personne.
 
-It's gross.
-She's gross.
-The world is better off without spider lovers.
+C’est répugnant.
+Elle est répugnante.
+Le monde se porte mieux sans les amoureux d’araignées.
 
-And I'm gonna tell everyone.]]
+Et je vais le dire à tout le monde.]]
 	
 	elseif poemname == 'poem_n2b' then
 		poemtext = [[
@@ -193,357 +186,354 @@ b3AgbXlzZWxmLg==]]
 	
 	elseif poemname == 'poem_n3' then
 		poemtext = [[
-I'll Be Your Beach
+Je serai ta plage
 
-Your mind is so full of troubles and fears
-That diminished your wonder over the years
-But today I have a special place
-A beach for us to go.
-
-A shore reaching beyond your sight
-A sea that sparkles with brilliant light
-The walls in your mind will melt away
-Before the sunny glow.]]
+Ton esprit est si rempli de peurs et d’ennuis
+Que, pendant des années, ton éclat a été terni
+Mais aujourd’hui, je connais un endroit
+Une plage qui nous attend.
+ 
+Un rivage qui s’étend à perte de vue
+Une mer au scintillement absolu.
+Comme neige au soleil, le mur fondra
+Dans ton esprit brillant.]]
 	elseif poemname == 'poem_n3-a' then
 		poemtext = [[
-I'll be the beach that washes your worries away
-I'll be the beach that you daydream about each day
-I'll be the beach that makes your heart leap
-In a way you thought had left you long ago.
-
-Let's bury your heavy thoughts in a pile of sand
-Bathe in sunbeams and hold my hand
-Wash your insecurities in the salty sea
-And let me see you shine.]]
+Je serai la plage qui vaincra tes peurs
+Je serai la plage dont tu rêves chaque jour
+Je serai la plage qui fera bondir ton coeur
+D’une façon que tu croyais envolée pour toujours.
+ 
+Enterrons tes soucis dans le sable, au loin
+Baigne dans la lumière et prends ma main.
+Jette tes incertitudes dans l’eau salée
+Et laisse-moi te voir briller.]]
 	elseif poemname == 'poem_n3-b' then
 		poemtext = [[
-Let's leave your memories in a footprint trail
-Set you free in my windy sail
-And remember the reasons you're wonderful
-When you press your lips to mine.
-
-I'll be the beach that washes your worries away
-I'll be the beach that you daydream about each day
-I'll be the beach that makes your heart leap
-In a way you thought had left you long ago.]]
+Abandonnons tes souvenirs telle une trainée d’empreintes
+Libérons ton esprit dans ma voile enceinte 
+Remémorons-nous les raisons qui font que tu es merveilleux
+Lorsque tes lèvres, contre les miennes, sont posées.
+ 
+Je serai la plage qui vaincra tes peurs
+Je serai la plage dont tu rêves chaque jour
+Je serai la plage qui fera bondir ton coeur
+D’une façon que tu croyais envolée pour toujours.]]
 	elseif poemname == 'poem_n3-c' then
 		poemtext = [[
-But if you let me by your side
-Your own beach, your own escape
-You'll learn to love yourself again.]]
+Mais si tu me laisses être à tes côtés
+Ta propre plage, ta propre façon de t’échapper
+Tu apprendras de nouveau à t’aimer.]]
 
 	elseif poemname == 'poem_n3b' then
 		poemtext = [[
-Because You
+Parce que toi
 
-Tomorrow will be brighter with me around
-But when today is dim, I can only look down.
-My looking is a little more forward
-Because you look at me.
+Demain sera plus radieux avec moi à tes côtés
+Mais quand aujourd’hui, il fait sombre, je ne peux que baisser les yeux.
+Je recherche un peu plus loin
+Parce que tu me regardes.
 
-When I want to say something, I say it with a shout!
-But my truest feelings can never come out.
-My words are a little less empty
-Because you listen to me.]]
+Quand je veux dire quelque chose, je le dis en criant !
+Mais mes véritables sentiments ne peuvent jamais sortir.
+Mes mots sont un peu moins creux
+Parce que tu m’écoutes.]]
 	elseif poemname == 'poem_n3b-a' then
 		poemtext = [[
-When something is above me, I reach for the stars.
-But when I feel small, I don't get very far.
-My standing is a little bit taller
-Because you sit with me.
+Quand une chose est au-dessus de moi, j’attrape les étoiles.
+Mais quand je me sens petite, je ne vais pas très loin.
+Ma position est un peu plus haute
+Parce que tu t’assieds avec moi.
 
-I believe in myself with all of my heart.
-But what do I do when it's torn all apart?
-My faith is a little bit stronger
-Because you trusted me.]]
+Je crois en moi-même de tout mon coeur.
+Mais que faire quand il est brisé ?
+Ma foi est un peu plus forte
+Parce que tu me fais confiance.]]
 	elseif poemname == 'poem_n3b-b' then
 		poemtext = [[
-My pen always puts my feelings to the test.
-I'm not a good writer, but my best is my best.
-My poems are a little bit dearer
-Because you think of me.
+Mon stylo met toujours mes sentiments à l’épreuve.
+Je fais de mon mieux, bien que je ne sois pas bonne écrivaine.
+Mes poèmes sont un peu plus précieux
+Parce que tu penses à moi.
 
-Because you, because you, because you.]]
+Parce que toi, Parce que toi, Parce que toi..]]
 	
 	elseif poemname == 'poem_n23' then
 		poemtext = [[
-I don't know how else to bring this up. But there's been something I've been worried
-about. Yuri has been acting kind of strange lately. You've only been here a few days,
-so you may not know what I mean. But she's not normally like this. She's always been
-quiet and polite and attentive...things like that.
+J’ignore comment aborder le sujet autrement. Mais il y a quelque chose qui m’inquiète.
+Yuri agit bizarrement ces derniers temps. Tu n’es là que depuis quelques jours, donc tu
+ne sais peut-être pas ce que je veux dire. Mais habituellement, elle n’est pas comme ça.
+Elle a toujours été calme, polie et attentive... quelque chose comme ça.
 
-Okay... This is really embarrassing, but I'm forcing myself to suck it up. The truth is,
-I'm REALLY worried about her. But if I try talking to her, she'll just get mad at me
-again. I don't know what to do. I think you're the only person that she'll listen to.
-I don't know why. But please try to do something. Maybe you can convince her to talk to
-a therapist.]]
+Bon... C’est vraiment gênant, mais je vais m’efforcer de faire avec. La vérité, c’est que,
+je suis TRÈS inquiète pour elle. Mais si j’essaie de lui parler, elle va encore se fâcher contre moi.
+Je ne sais pas quoi faire. Je pense que tu es la seule personne qu’elle écoutera. J’ignore pourquoi.
+Mais s’il te plaît, fais quelque chose. Peut-être que tu peux la convaincre de parler à un thérapeute.]]
 	elseif poemname == 'poem_n23-a' then
 		poemtext = [[
-I've always wanted to try being better friends with Yuri, and it really hurts me to see 
-this happening. I know I'm going to hate myself later for admitting that, but right now 
-I don't care. I just feel so helpless. So please see if you can do something to help. 
-I don't want anything bad to happen to her. I'll make you cupcakes if I have to. Just
-please try to do something.
+J’ai toujours voulu essayer de mieux m’entendre avec Yuri, et ça me blesse vraiment de voir
+ça se produire. Je sais que je vais me détester plus tard pour l’avoir admis, mais là,
+je m’en fiche. Je me sens si impuissante. Donc s’il te plaît, vois si tu peux l’aider.
+Je ne veux pas qu’il lui arrive quelque chose de mal. Je te ferai des cupcakes s’il le faut.
+Alors, s’il te plaît, essaie de remédier à ça.
 
-As for Monika... I don't know why, but she's been really dismissive about this. It's like
-she just wants us to ignore it. So I'm mad at her right now, and that's why I'm
-coming to you about this. DON'T LET HER KNOW I WROTE THIS!!!! Just
-pretend like I gave you a really good poem, okay? I'm counting on you. Thanks
-for reading.]]
+Quant à Monika... Je ne sais pas pourquoi, mais elle a été très méprisante à ce sujet.
+C’est comme si elle voulait juste qu’on ignore ça. Donc je suis fâchée avec elle en ce moment,
+et c’est pour ça que je viens t’en parler. NE LUI DIS PAS QUE J’AI ÉCRIT ÇA !!! Fais juste semblant
+que je t’ai donné un très bon poème, compris ? Je compte sur toi. Merci d’avoir lu.]]
 	
 	elseif poemname == 'poem_s1' then
 		poemtext = [[
-Dear Sunshine
+Cher rayon de soleil
 
-The way you glow through my blinds in the morning
-It makes me feel like you missed me.
-Kissing my forehead to help me out of bed.
-Making me rub the sleepy from my eyes.
+Le matin, quand je vois tes rayons traverser les volets,
+Cela me donne l’impression que je t’ai manqué. 
+Un baiser sur le front pour me sortir du lit,
+Un baiser pour dissiper la brume de mes yeux assoupis.
 
-Are you asking me to come out and play?
-Are you trusting me to wish away a rainy day?
-I look above. The sky is blue.
-It's a secret, but I trust you too.]]
+Voudrais-tu que je sorte et que l’on joue ?
+Me ferais-tu confiance pour chasser la pluie ?
+Un regard pour le ciel, qui est dégagé aujourd’hui.
+C’est un secret, mais il restera entre nous.]]
 	elseif poemname == 'poem_s1-a' then
 		poemtext = [[
-If it wasn't for you, I could sleep forever.
-But I'm not mad.
+Si ce n’était pour toi, je pourrais dormir à jamais.
+Mais je ne suis pas fâchée.
 
-I want breakfast.]]
+Car j’ai faim.]]
 	
 	elseif poemname == 'poem_s2' then
 		poemtext = [[
-Bottles
+Bocaux
 
-I pop off my scalp like the lid of a cookie jar.
-It's the secret place where I keep all my dreams.
-Little balls of sunshine, all rubbing together like a bundle of kittens.
-I reach inside with my thumb and forefinger and pluck one out.
-It's warm and tingly.
-But there's no time to waste! I put it in a bottle to keep it safe.
-And I put the bottle on the shelf with all of the other bottles.
-Happy thoughts, happy thoughts, happy thoughts in bottles, all in a row.]]
+Je m’ouvre le crâne comme s’il s’agissait d’une boite à gâteaux.
+Voilà le jardin secret où je dissimule tous mes rêves.
+Des soleils miniatures, se frottant entre eux comme une famille de chatons.
+À l’aide du pouce et de l’index, je m’en approche et en soustrait un.
+Quelle chaleur, quelle excitation.
+Mais il n’y a pas de temps à perdre ! Je l’enferme dans un bocal pour le protéger.
+Et je mets le bocal sur l’étagère, à côté de bien d’autres bocaux.
+Des pensées positives, des pensées positives, des pensées positives dans des bocaux, les uns à la suite des autres.]]
 	elseif poemname == 'poem_s2-a' then
 		poemtext = [[
-My collection makes me lots of friends.
-Each bottle a starlight to make amends.
-Sometimes my friend feels a certain way.
-Down comes a bottle to save the day.
+Grâce à ma collection, je me fais beaucoup d’amis. 
+Un rayon de soleil par bocal pour se faire pardonner.
+Parfois, mon ami éprouve cet étrange ressenti
+Un de mes bocaux se vide mais la mise est sauvée.
 
-Night after night, more dreams.
-Friend after friend, more bottles.
-Deeper and deeper my fingers go.
-Like exploring a dark cave, discovering the secrets hiding in the nooks and crannies.
-Digging and digging.
-Scraping and scraping.]]
+Une nuit après l’autre, les rêves s’additionnent.
+Un ami après l’autre, les bocaux s’additionnent.
+Mes doigts descendent de plus en plus profondément.
+Comme s’ils exploraient une grotte sombre, décelant des secrets cachés dans les moindres recoins.
+Creusant, encore et encore.
+Raclant, encore et encore.]]
 	elseif poemname == 'poem_s2-b' then
 		poemtext = [[
-I blow dust off my bottle caps.
-It doesn't feel like time elapsed.
-My empty shelf could use some more.
-My friends look through my locked front door.
+Dans un souffle, la poussière sur les couvercles s’envole.
+Que de temps passé, que je n’ai pu saisir.
+L’étagère sonne creux mais peut toujours servir.
+Mes amis savent ce qui se cache sous la coupole.
 
-Finally, all done. I open up, and in come my friends.
-In they come, in such a hurry. Do they want my bottles that much?
-I frantically pull them from the shelf, one after the other.
-Holding them out to each and every friend.
-Each and every bottle.
-But every time I let one go, it shatters against the tile between my feet.
-Happy thoughts, happy thoughts, happy thoughts in shards, all over the floor.]]
+Enfin, nous y sommes. Je m’ouvre, et mes amis en profitent.
+Ils entrent, s’entrechoquent dans leur hâte. Désirent-ils autant mes bocaux ?
+Je les retire frénétiquement de l’étagère, un par un.
+Pour les tendre à mes amis, tous sans exception.
+Leur tendre mes bocaux, tous sans exception.
+Mais à chaque fois que j’en offre un, il se fracasse contre le carrelage entre mes pieds.
+Des pensées positives, des pensées positives, des pensées positives en éclats, jonchant le sol.]]
 	elseif poemname == 'poem_s2-c' then
 		poemtext = [[
-They were supposed to be for my friends, my friends who aren't smiling.
-They're all shouting, pleading. Something.
-But all I hear is echo, echo, echo, echo, echo
-Inside my head.]]
+Ils étaient censés être pour mes amis, mes amis qui ne sourient pas.
+Ils crient, ils supplient. Quelque chose.
+Mais je n’entends que des échos, échos, échos, échos, échos
+Dans ma tête.]]
 	
 	elseif poemname == 'poem_s3' then
 		poemtext = [[
 %
 
-Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get
-out of my head. Get out of my head. Get out of my head. Get out of my head. Get out
-of my head. Get out of my head. Get out of my head. Get out of my head. Get out of
-my head. Get out of my head. Get out of my head. Get out of my head. Get out of my
-head. Get out of my head. Get out of my head. Get out of my head. Get out of my head.
-Get out of my head. Get out of my head. Get out of my head. Get out of my head. Get
-out of my head. Get out of my head. Get out of my head. Get out of my head. Get out
-of my head. Get out of my head. Get out of my head. Get out of my head. Get out of
-my head. Get out of my head. Get out of my head. Get out of my head. Get out of my
-head. Get out of my head. Get out of]]
+Sors de ma tête. Sors de ma tête. Sors de ma tête. Sors de ma tête. Sors de ma tête. 
+Sors de ma tête. Sors de ma tête. Sors de ma tête. Sors de ma tête. Sors de ma tête. 
+Sors de ma tête. Sors de ma tête. Sors de ma tête. Sors de ma tête. Sors de ma tête. 
+Sors de ma tête. Sors de ma tête. Sors de ma tête. Sors de ma tête. Sors de ma tête. 
+Sors de ma tête. Sors de ma tête. Sors de ma tête. Sors de ma tête. Sors de ma tête. 
+Sors de ma tête. Sors de ma tête. Sors de ma tête. Sors de ma tête. Sors de ma tête. 
+Sors de ma tête. Sors de ma tête. Sors de ma tête. Sors de ma tête. Sors de ma tête. 
+Sors de ma tête. Sors de ma tête. Sors de ma tête. Sors de ma tête. Sors de ma tête. 
+Sors de ma tête. Sors de ma tête. Sors de ma tête. Sors de ma tête. Sors de ma tête. 
+Sors de ma tête. Sors de ma tête. Sors de ma tête. Sors de ma tête. Sors de ma]]
 	elseif poemname == 'poem_s3-a' then
 		poemtext = [[
-Get.
-Out.
-Of.
-My.
-Head.
+Sors.
+De.
+Ma.
+Tête.
 
-Get out of my head before I do what I know is best for you.
-Get out of my head before I listen to everything she said to me.
-Get out of my head before I show you how much I love you.
-Get out of my head before I finish writing this poem.
+Sors de ma tête avant que je fasse ce que je sais être le mieux pour toi.
+Sors de ma tête avant que je n’écoute tout ce qu’elle me dit.
+Sors de ma tête avant que je te montre ô combien je t’aime.
+Sors de ma tête avant que je finisse d’écrire ce poème.
 
 
-But a poem is never actually finished.
-It just stops moving.]]
+Mais un poème n’est en réalité jamais fini.
+Il s’arrête juste.]]
 	
 	elseif poemname == 'poem_m1' then
 		poemtext = [[
-Hole in Wall
+Trou dans le mur
 
-It couldn't have been me.
-See, the direction the spackle protrudes.
-A noisy neighbor? An angry boyfriend? I'll never know. I wasn't home.
-I peer inside for a clue.
-No! I can't see. I reel, blind, like a film left out in the sun.
-But it's too late. My retinas.
-Already scorched with a permanent copy of the meaningless image.
-It's just a little hole. It wasn't too bright.]]
+Ça n’aurait pas pu être moi.
+Tu vois, la direction où le mastic ressort.
+Un voisin bruyant ? Un petit copain en colère ? Je ne le saurai jamais. Je n’étais pas à la maison.
+Je regarde à l’intérieur pour le découvrir.
+Non ! Je ne vois rien. Recroquevillée, les yeux couverts, pareille à une bobine laissée au soleil.
+Mais il est trop tard. Ma rétine.
+Déjà brûlée avec une copie permanente de l’image insensée.
+C’est juste un petit trou. Ce n’était pas trop éclairé.]]
 	elseif poemname == 'poem_m1-a' then
 		poemtext = [[
-It was too deep.
-Stretching forever into everything.
-A hole of infinite choices.
-I realize now, that I wasn't looking in.
-I was looking out.
-And he, on the other side, was looking in.]]
+C’était trop profond.
+S’étirant pour toujours dans tout.
+Un trou de choix infinis.
+Je ne réalise que maintenant que je ne regardais pas à l’intérieur.
+Je regardais à l’extérieur.
+Et lui, de l’autre côté, regardait à l’intérieur.]]
 
 	elseif poemname == 'poem_m21' then
 		poemtext = [[
-Hole in Wall
+Trou dans le mur
 
-But he wasn't looking at me.
-Confused, I frantically glance at my surroundings.
-But my burned eyes can no longer see color.
-Are there others in this room? Are they talking?
-Or are they simply poems on flat sheets of paper,
-The sound of frantic scrawling playing tricks on my ears?
-The room begins to crinkle.
-Closing in on me.
-The air I breathe dissipates before it reaches my lungs.
-I panic. There must be a way out.
-It's right there. He's right there.]]
+Mais il ne me regardait pas.
+Confuse, je regarde frénétiquement tout autour de moi.
+Mais mes yeux brûlés ne peuvent plus voir la couleur.
+Y a-t-il d’autres personnes dans cette pièce ? Sont-ils en train de parler ?
+Ou ne sont-ils que des poèmes sur de simples feuilles,
+Le son des griffonnages effrénés sur mes oreilles ?
+La pièce commence à se froisser.
+À se refermer sur moi.
+L’air que je respire se dissipe avant qu’il n’atteigne mes poumons.
+Je panique. Il doit y avoir une sortie.
+C’est juste là. Il est juste là.]]
 	elseif poemname == 'poem_m21-a' then
-		poemtext = "Swallowing my fears, I brandish my pen."
+		poemtext = "Avalant mes peurs, je brandis mon stylo."
 
 	elseif poemname == 'poem_m2' then
 		poemtext = [[
-Save Me
+Sauve-moi
 
-The colors, they won't stop.
-Bright, beautiful colors
-Flashing, expanding, piercing
-Red, green, blue
-An endless
-cacophony
-Of meaningless
-noise]]
+Les couleurs, elles ne cessent pas.
+De vives, belles couleurs
+Clignotant, s’étendant, pénétrant
+Rouges, vertes, bleues
+Une cacophonie
+interminable
+de bruits
+dénués de sens]]
 	elseif poemname == 'poem_m2-a' then
 		poemtext = [[
-The noise, it won't stop.
-Violent, grating waveforms
-Squeaking, screeching, piercing
-Sine, cosine, tangent
-    Like playing a chalkboard on a turntable
-        Like playing a vinyl on a pizza crust
-An endless
-poem
-Of meaningless]]
+Le bruit, il ne cessera pas.
+De violentes, désagréables ondes
+Couinant, grinçant, perçant, 
+Sinus, cosinus, tangente
+    Comme jouer un tableau noir sur une plaque tournante
+        Comme jouer du vinyle sur une croûte de pizza
+Un poème
+sans fin
+dénué de sens]]
 	elseif poemname == 'poem_m2-b' then
 		poemtext = ""
 	elseif poemname == 'poem_m2-c' then
-		poemtext = "\n\n\n\n\n\n\n\n\nLoad Me"
+		poemtext = "\n\n\n\n\n\n\n\n\nCharge-moi."
 	
 	elseif poemname == 'poem_m22' then
 		poemtext = [[
-Save Me
+Sauve-moi
 
-The colors, they won't
-Bright, bea t ful c l rs
-Flash ng, exp nd ng, piercing
-Red, green, blue
-An  ndless
-CACOPHONY
-Of meaningless
-noise]]
+Les couleurs, elles ne cessent pas.
+De vives, b ll s c ul urs
+Clign tant, s’ét ndant, pén trant
+Rouges, vertes, bleues
+Une cacophonie
+int rminable
+de bruits
+dénués de sens]]
 	elseif poemname == 'poem_m22-a' then
 		poemtext = [[
-The noise, it won't STOP.
-Viol nt, grating w vef rms
-Sq e king, screech ng, piercing
-SINE, COSINE, TANGENT
-    Like play ng a ch lkboard on a t rntable
-        Like playing a KNIFE on a BREATHING RIBCAGE
- n  ndl ss
-p  m
-Of m  n ngl ss]]
+Le bruit, il ne cessera pas.
+De viol ntes, désagréables  nd s
+Co in nt, grinç nt, perçant, 
+SINUS, COSINUS, TANGENTE
+    Comme j uer un t bbleau noir sur une pl que tournante
+        Comme jouer un COUTEAU sur un THORAX EN RESPIRATION.
+ n  p èm 
+s ns f n
+dénué de s ns]]
 	elseif poemname == 'poem_m22-c' then
-		poemtext = "\n\n\n\n\n\n\n\n\nDelete Her"
+		poemtext = "\n\n\n\n\n\n\n\n\nSupprime-la"
 	
 	elseif poemname == 'poem_m3' then
 		poemtext = [[
-The Lady who Knows Everything
+La Dame qui Sait Tout
 
-An old tale tells of a lady who wanders Earth.
-The Lady who Knows Everything.
-A beautiful lady who has found every answer,
-All meaning,
-All purpose,
-And all that was ever sought.]]
+Une vieille histoire veut qu’une dame erre sur Terre.
+La Dame qui Sait Tout.
+Une belle dame qui a trouvé toutes les réponses,
+Tous les sens,
+Toutes les raisons d’être,
+Et tout ce qui, un jour, a été recherché.]]
 	elseif poemname == 'poem_m3-a' then
 		poemtext = [[
-And here I am,
+Et il y a moi,
 
 
-              a feather
+              une plume
 
 
-Lost adrift the sky, victim of the currents of the wind.
+À la dérive dans le ciel, à la merci du vent.
 
-Day after day, I search.
-I search with little hope, knowing legends don't exist.
-But when all else has failed me,
-When all others have turned away,
-The legend is all that remains - the last dim star glimmering in the twilit sky.]]
+Jour après jour, je cherche.
+Je cherche avec de maigres espoirs, consciente que les légendes n’existent pas.
+Mais quand tout le reste m’a fait défaut,
+Quand tous les autres m’ont tourné le dos,
+Ne reste que la légende, la dernière lueur étoilée qui scintille dans le ciel crépusculaire.]]
 	elseif poemname == 'poem_m3-b' then
 		poemtext = [[
-Until one day, the wind ceases to blow.
-I fall.
-And I fall and fall, and fall even more.
-Gentle as a feather.
-A dry quill, expressionless.
+Jusqu’au jour où le vent cesse de souffler.
+Je tombe.
+Et je tombe, je tombe, je tombe toujours davantage.
+Aussi délicatement qu’une plume.
+Qu’une plume sèche, vide d’émotion.
 
-But a hand catches me between the thumb and forefinger.
-The hand of a beautiful lady.
-I look at her eyes and find no end to her gaze.]]
+Mais une main m’attrape, m’agrippe entre le pouce et l’index.
+La main d’une belle femme.
+Je plonge mon regard dans le sien et n’y trouve pas de fin.]]
 	elseif poemname == 'poem_m3-c' then
 		poemtext = [[
-The Lady who Knows Everything knows what I am thinking.
-Before I can speak, she responds in a hollow voice.
-"I have found every answer, all of which amount to nothing.
-There is no meaning.
-There is no purpose.
-And we seek only the impossible.
-I am not your legend.
-Your legend does not exist."
+La Dame qui Sait Tout sait à quoi je pense.
+Avant même que je ne puisse parler, elle me répond d’une voix caverneuse.
+« J’ai trouvé toutes les réponses, toutes celles qui n’apportent rien.
+Il n’y a pas de sens.
+Il n’y a pas de raison d’être.
+Et nous ne cherchons que l’impossible.
+Je ne suis pas ta légende.
+Celle en qui tu crois n’existe pas. »
 
-And with a breath, she blows me back afloat, and I pick up a gust of wind.]]
+Et dans un souffle, elle me remet à flot, avant qu’une rafale ne m’emporte.]]
 	
 	elseif poemname == 'poem_m4' then
 		poemtext = [[
-Happy End
+Fin Heureuse
 
-Pen in hand, I find my strength.
-The courage endowed upon me by my one and only love.
-Together, let us dismantle this crumbling world
-And write a novel of our own fantasies.
+Crayon en main, le pouvoir est mien.
+Ce courage dont mon seul et unique amour m’a doté.
+Ensemble, déconstruisons ce monde en ruines.
+Et écrivons un roman avec nos propres fantaisies.
 
-With a flick of her pen, the lost finds her way.
-In a world of infinite choices, behold this special day.
+D’un coup de crayon, l’égarée retrouve son chemin.
+Dans un monde aux possibilités infinies, contemplez ce Matin.
 
-After all,
-Not all good times must come to an end.]]
+Puisqu’après tout,
+Tous les bons moments n’ont pas forcément de fin.]]
 	
 	else poemtext = ''
 	end
