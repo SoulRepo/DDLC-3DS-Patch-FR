@@ -6,6 +6,6 @@ Doki Doki Literature Club! est un jeu créer par la Team Salvato et il est dispo
 
 DDLC-3DS a été créer par LukeeGD et il est disponible ici: https://github.com/LukeZGD/DDLC-3DS
 
-Le patch FR utilisé est disponible ici: https://www.yarashii.fr/2018/01/doki-doki-literature-club-vn-fr/
+Le patch FR utilisé ainsi que la liste des personnes l'ayant fait est disponible ici: https://www.yarashii.fr/ddlc
 
 Si vous souhaitez en connaitre plus sur l'avancement du projet vous pouvez aller ici: https://github.com/Muda42/DDLC-3DS-Patch-FR/projects/2
