@@ -1,3 +1,5 @@
+Français:
+
 DDLC-3DS est un portage non-officiel de Doki Doki Literature Club! pour la Nintendo3DS.
 DDLC-3DS + Patch FR est une version du portage traduite en français grace à un patch de traduction.
 Le projet n'est pas fini (il reste encore beaucoup à transposer) mais je vais faire de mon mieux.
@@ -10,9 +12,10 @@ Le patch FR utilisé ainsi que la liste des personnes l'ayant fait est disponibl
 
 Si vous souhaitez en connaitre plus sur l'avancement du projet vous pouvez aller ici: https://github.com/Muda42/DDLC-3DS-Patch-FR/projects/2
 
+English:
 
 DDLC-3DS is an unofficial 3DS port of Doki Doki Literature Club!.
-DDLC-3DS + Patch FR is version of the port translated to french with an french traduction patch. 
+DDLC-3DS + Patch FR is a version of the port translated to french with an french traduction patch. 
 The project isn't finished (there is still much to transcode) but i will try to do my best. 
 
 Doki Doki Literature Club! is a free game created by Team Salvato and is available here: https://ddlc.moe/
