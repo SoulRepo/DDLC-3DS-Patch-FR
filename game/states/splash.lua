@@ -53,7 +53,7 @@ function drawSplash()
 		lg.draw(background_Image, posX, posY)
 		lg.draw(titlebg, 0, titlebg_ypos-240)
 		lg.setColor(64,64,64,alpha)
-		lg.print('Portage non-officiel par LukeeGD, Patch FR créer par la Team Yarashii et appliqué par Muda42',240,5)
+		lg.print('Unofficial port by LukeeGD',240,5)
 		drawBottomScreen()
 		menu_draw()
 	end
