@@ -1,153 +1,81 @@
 #---------------------------------------------------------------------------------
 .SUFFIXES:
 #---------------------------------------------------------------------------------
+define n
+
+
+endef
 
 ifeq ($(strip $(DEVKITARM)),)
 $(error "Please set DEVKITARM in your environment. export DEVKITARM=<path to>devkitARM")
+endif
+
+LOVEPOTION_3DS := $(CURDIR)/LovePotion.elf
+
+ifeq ($(UNAME), Linux)
+	makerom    := $(CURDIR)/tools/linux/makerom
+	bannertool := $(CURDIR)/tools/linux/bannertool
+else ifeq ($(UNAME), Darwin)
+	makerom    := $(CURDIR)/tools/osx/makerom
+	bannertool := $(CURDIR)/tools/osx/bannertool
+else
+	makerom    := $(CURDIR)/tools/windows/makerom.exe
+	bannertool := $(CURDIR)/tools/windows/bannertool.exe
 endif
 
 TOPDIR ?= $(CURDIR)
 include $(DEVKITARM)/3ds_rules
 
 #---------------------------------------------------------------------------------
-# TARGET is the name of the output
+# TARGET is the name of the output files
 # BUILD is the directory where object files & intermediate files will be placed
-# SOURCES is a list of directories containing source code
-# DATA is a list of directories containing data files
-# INCLUDES is a list of directories containing header files
+# ROMFS is the directory containing your LOVE game
 #
-# NO_SMDH: if set to anything, no SMDH file is generated.
-# APP_TITLE is the name of the app stored in the SMDH file (Optional)
-# APP_DESCRIPTION is the description of the app stored in the SMDH file (Optional)
-# APP_AUTHOR is the author of the app stored in the SMDH file (Optional)
+# APP_TITLE is the name of the app stored in the .3dsx file (Optional)
+# APP_AUTHOR is the author of the app stored in the .3dsx file (Optional)
+# APP_VERSION is the version of the app stored in the .3dsx file (Optional)
+# APP_TITLEID is the titleID of the app stored in the .3dsx file (Optional)
+# APP_DESCRIPTION is the description of the application
+#
 # ICON is the filename of the icon (.png), relative to the project folder.
-#   If not set, it attempts to use one of the following (in this order):
-#     - <Project name>.png
-#     - icon.png
-#     - <libctru folder>/default_icon.png
 #---------------------------------------------------------------------------------
+TARGET          := $(notdir $(CURDIR))
+BUILD           := $(TOPDIR)
 
-VERSION		:= 1.0.9
+ROMFS           := game/
 
-TARGET		:=	$(notdir $(CURDIR))
-BUILD		:=	build
-SOURCES		:=	\
-				source \
-				source/common \
-				source/modules/audio \
-				source/modules/filesystem \
-				source/modules/graphics \
-				source/modules/love \
-				source/modules/system \
-				source/modules/socket \
-				source/modules/image \
-				source/modules/timer \
-				source/modules/keyboard \
-				source/modules/font \
-				source/modules/mouse \
-				source/modules/joystick \
-				source/libs/json \
-				source/libs/lua \
-				source/libs/luaobj \
-				source/libs/lodepng \
-				source/libs/luajit \
-				source/libs/tremor
-DATA		:=	source/scripts
-INCLUDES	:=	$(SOURCES)
+APP_TITLE       := DDLC-3DS
+APP_AUTHOR      := LukeeGD
+APP_TITLEID     := 0xDDFC
+APP_VERSION     := 0.3.2
+APP_DESCRIPTION := An unofficial DDLC port for the 3DS!
 
-APP_TITLE	:=	DDLC-3DS
-APP_AUTHOR	:=	LukeeGD
-APP_DESCRIPTION	:=	An unofficial DDLC port for the 3DS!
-
-ICON := meta/icon.png
-BANNER := meta/banner.png
-JINGLE := meta/jingle.wav
-
-# CIA Options
-
-APP_PRODUCT_CODE := CTR-P-DDLC
-APP_UNIQUE_ID := 0xDDFC
-APP_SYSTEM_MODE := 64MB
-APP_SYSTEM_MODE_EXT := Legacy #124MB
+ICON            := icon.png
 
 #---------------------------------------------------------------------------------
-# options for code generation
-#---------------------------------------------------------------------------------
-ARCH	:=	-march=armv6k -mtune=mpcore -mfloat-abi=hard
-
-CFLAGS	:=	-g -Wall -O2 -mword-relocations -ffunction-sections -mtp=soft \
-			-ffast-math \
-			$(ARCH)
-
-CFLAGS	+=	$(INCLUDE) -DARM11 -D_3DS
-
-CXXFLAGS	:= $(CFLAGS) -fno-rtti -fexceptions -std=gnu++14
-
-ASFLAGS	:=	-g $(ARCH)
-LDFLAGS	=	-specs=3dsx.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
-
-LIBS	:= -lz -lcitro3d -lctru -lm -logg
-
-UNAME := $(shell uname)
-
-#---------------------------------------------------------------------------------
-# list of directories containing libraries, this must be the top level containing
-# include and lib
-#---------------------------------------------------------------------------------
-LIBDIRS	:= $(CTRULIB) $(PORTLIBS)
-
-#---------------------------------------------------------------------------------
-# load game folder into romfs if it exists
-#---------------------------------------------------------------------------------
-ifneq ($(wildcard $(CURDIR)/game/.),)
-	export APP_ROMFS_DIR := game
-endif
-
-#---------------------------------------------------------------------------------
-# no real need to edit anything past this point unless you need to add additional
-# rules for different file extensions
-#---------------------------------------------------------------------------------
-ifneq ($(BUILD),$(notdir $(CURDIR)))
+# cia variables
+#
+# BANNER_IMAGE: the banner must be a 256x128px png
+# BANNER_AUDIO: audio must be wav or ogg and ~3 seconds long maximum
+# UNIQUE_ID   : a hex number, must be unique so it does not overwrite other apps
+#               keep the leading 0x part, only change the last four numbers
+# PRODUCT_CODE: change the last four digits, must also be unique (?)
 #---------------------------------------------------------------------------------
 
-export OUTPUT	:=	$(CURDIR)/$(TARGET)
-export TOPDIR	:=	$(CURDIR)
+RSF_PATH        := cia/info.rsf
+BANNER_AUDIO    := cia/audio.wav
+BANNER_IMAGE    := cia/banner.png
 
-export VPATH	:=	$(foreach dir,$(SOURCES),$(CURDIR)/$(dir)) \
-			$(foreach dir,$(DATA),$(CURDIR)/$(dir))
-
-export DEPSDIR	:=	$(CURDIR)/$(BUILD)
-
-CFILES		:=	$(foreach dir, $(SOURCES), $(notdir $(wildcard $(dir)/*.c)))
-CPPFILES	:=	$(foreach dir, $(SOURCES), $(notdir $(wildcard $(dir)/*.cpp))) \
-
-SFILES		:=	$(foreach dir, $(SOURCES), $(notdir $(wildcard $(dir)/*.s)))
-BINFILES	:=	$(foreach dir, $(DATA),    $(notdir $(wildcard $(dir)/*.*)))
-PICAFILE	:= 	$(foreach dir,$(SOURCES),  $(notdir $(wildcard $(dir)/*.v.pica)))
+ICON_FLAGS      := nosavebackups,visible
+UNIQUE_ID       := 0xDDFC # must be unique!
+PRODUCT_CODE    := CTR-H-DDLC # change this too
 
 #---------------------------------------------------------------------------------
-# use CXX for linking C++ projects, CC for standard C
-#---------------------------------------------------------------------------------
-ifeq ($(strip $(CPPFILES)),)
-#---------------------------------------------------------------------------------
-	export LD	:=	$(CC)
-#---------------------------------------------------------------------------------
-else
-#---------------------------------------------------------------------------------
-	export LD	:=	$(CXX)
-#---------------------------------------------------------------------------------
-endif
+# build options
 #---------------------------------------------------------------------------------
 
-export OFILES	:=	$(addsuffix .o,$(BINFILES)) \
-			$(PICAFILE:.v.pica=.shbin.o) \
-			$(CPPFILES:.cpp=.o) $(CFILES:.c=.o) $(SFILES:.s=.o) 
-
-export INCLUDE	:=	$(foreach dir, $(INCLUDES), -I$(CURDIR)/$(dir)) \
-					$(foreach dir, $(LIBDIRS),  -I$(dir)/include) \
-					-I$(CURDIR)/$(BUILD)
-
-export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L$(dir)/lib)
+export OUTPUT    :=    $(TARGET)
+export TOPDIR    :=    $(CURDIR)
 
 ifeq ($(strip $(ICON)),)
 	icons := $(wildcard *.png)
@@ -162,169 +90,58 @@ else
 	export APP_ICON := $(TOPDIR)/$(ICON)
 endif
 
-ifeq ($(strip $(NO_SMDH)),)
-	export _3DSXFLAGS += --smdh=$(CURDIR)/$(TARGET).smdh
-endif
-
-ifneq ($(strip $(USE_ROMFS)),)
-	export _3DSXFLAGS += --romfs=$(CURDIR)/$(APP_ROMFS_DIR)
-endif
-
-#---------------------------------------------------------------------------------
-# arguments for cia and 3ds building, kind of a mess
-#---------------------------------------------------------------------------------
-export BUILD_ARGS := \
--DAPP_TITLE=$(APP_TITLE) \
--DAPP_PRODUCT_CODE=$(APP_PRODUCT_CODE) \
--DAPP_ROMFS_DIR=$(CURDIR)/$(APP_ROMFS_DIR) \
--DAPP_UNIQUE_ID=$(APP_UNIQUE_ID) \
--DAPP_SYSTEM_MODE=$(APP_SYSTEM_MODE) \
--DAPP_SYSTEM_MODE_EXT=$(APP_SYSTEM_MODE_EXT) \
--elf $(OUTPUT).elf -rsf "$(TOPDIR)/meta/workarounds/workaround.rsf" \
--icon $(TOPDIR)/icon.bin -banner $(TOPDIR)/banner.bin -exefslogo -target t
-
-.PHONY: $(BUILD) clean all
-
-#---------------------------------------------------------------------------------
-
-all: $(BUILD)
-
-$(BUILD):
-	@[ -d $@ ] || mkdir -p $@
-	@$(MAKE) --no-print-directory -C $(BUILD) -f $(CURDIR)/Makefile
-
-#---------------------------------------------------------------------------------
-clean:
-	@rm -fr $(BUILD) $(TARGET).3dsx $(OUTPUT).smdh $(OUTPUT).elf $(OUTPUT).3ds $(OUTPUT).cia icon.bin banner.bin
-	@echo clean ...
-
-#---------------------------------------------------------------------------------
-install:
-	@$(TOPDIR)/tools/ftp-copy
-
-#---------------------------------------------------------------------------------
-else
-
-DEPENDS	:=	$(OFILES:.o=.d)
-
 #---------------------------------------------------------------------------------
 # main targets
 #---------------------------------------------------------------------------------
-ifeq ($(strip $(NO_SMDH)),)
-$(OUTPUT).3dsx	:	$(OUTPUT).smdh icon.bin banner.bin $(OUTPUT).elf $(OUTPUT).3ds $(OUTPUT).cia
-else
-$(OUTPUT).3dsx	:	icon.bin banner.bin $(OUTPUT).elf $(OUTPUT).3ds $(OUTPUT).cia
-endif
+
+all: $(OUTPUT).smdh $(OUTPUT).3dsx
+
+clean:
+	@echo clean ...
+	@rm -fr $(TARGET).3dsx $(OUTPUT).smdh $(OUTPUT).cia banner.bnr icon.icn
+
+$(OUTPUT).smdh:
+	@echo "Building smdh.."
+	@smdhtool --create "$(APP_TITLE)" "$(APP_DESCRIPTION)" "$(APP_AUTHOR)" "$(APP_ICON)" $@
+
+$(OUTPUT).3dsx:
+	@echo "Building 3dsx.."
+	@3dsxtool $(LOVEPOTION_3DS) $@ --smdh=$(OUTPUT).smdh --romfs=$(ROMFS)
 
 #---------------------------------------------------------------------------------
-icon.bin	:	
+# cia targets
+#
+# note: to build as a cia, download bannertool and makerom
+# add the respective OS binary to your path:
+#
+# export makerom=<path/to/makerom>
+# export bannertool=<path/to/bannertool>
 #---------------------------------------------------------------------------------
-ifeq ($(UNAME), Linux)
-	@$(TOPDIR)/tools/linux/bannertool makesmdh -s $(APP_TITLE) -l $(APP_TITLE) -p $(APP_AUTHOR) -i $(TOPDIR)/$(ICON) -o $(TOPDIR)/icon.bin -f visible allow3d
-else ifeq ($(UNAME), Darwin)
-	@$(TOPDIR)/tools/osx/bannertool makesmdh -s $(APP_TITLE) -l $(APP_TITLE) -p $(APP_AUTHOR) -i $(TOPDIR)/$(ICON) -o $(TOPDIR)/icon.bin -f visible allow3d
-else
-	@$(TOPDIR)/tools/windows/bannertool.exe makesmdh -s $(APP_TITLE) -l $(APP_TITLE) -p $(APP_AUTHOR) -i $(TOPDIR)/$(ICON) -o $(TOPDIR)/icon.bin -f visible allow3d
-endif
+cia: banner icon
+	@$(makerom) -f cia \
+	-o $(OUTPUT).cia \
+	-target t \
+	-exefslogo \
+	-elf $(LOVEPOTION_3DS) \
+	-rsf "$(RSF_PATH)" \
+	-banner "$(BUILD)/banner.bnr" \
+	-icon "$(BUILD)/icon.icn" \
+	-DAPP_TITLE="$(APP_TITLE)" \
+	-DAPP_PRODUCT_CODE="$(PRODUCT_CODE)" \
+	-DAPP_UNIQUE_ID="$(UNIQUE_ID)" \
+	-DAPP_ROMFS="$(ROMFS)"
 
-#---------------------------------------------------------------------------------
-banner.bin	:	
-#---------------------------------------------------------------------------------
-ifeq ($(UNAME), Linux)
-	@$(TOPDIR)/tools/linux/bannertool makebanner -i $(TOPDIR)/$(BANNER) -a $(TOPDIR)/$(JINGLE) -o $(TOPDIR)/banner.bin
-else ifeq ($(UNAME), Darwin)
-	@$(TOPDIR)/tools/osx/bannertool makebanner -i $(TOPDIR)/$(BANNER) -a $(TOPDIR)/$(JINGLE) -o $(TOPDIR)/banner.bin
-else
-	@$(TOPDIR)/tools/windows/bannertool.exe makebanner -i $(TOPDIR)/$(BANNER) -a $(TOPDIR)/$(JINGLE) -o $(TOPDIR)/banner.bin
-endif
+banner:
+	@$(bannertool) makebanner \
+	-i "$(BANNER_IMAGE)" \
+	-a "$(BANNER_AUDIO)" \
+	-o "$(BUILD)/banner.bnr"
 
-#---------------------------------------------------------------------------------
-$(OUTPUT).elf	:	$(OFILES)
-#---------------------------------------------------------------------------------
-
-#---------------------------------------------------------------------------------
-$(OUTPUT).3ds	:	$(OUTPUT).elf icon.bin banner.bin
-#---------------------------------------------------------------------------------
-ifeq ($(UNAME), Linux)
-	@$(TOPDIR)/tools/linux/makerom -f cci -o $(OUTPUT).3ds $(BUILD_ARGS)
-else ifeq ($(UNAME), Darwin)
-	@$(TOPDIR)/tools/osx/makerom -f cci -o $(OUTPUT).3ds $(BUILD_ARGS)
-else
-	@$(TOPDIR)/tools/windows/makerom.exe -f cci -o $(OUTPUT).3ds $(BUILD_ARGS)
-endif
-	@echo 3DS packaged ...
-
-#---------------------------------------------------------------------------------
-$(OUTPUT).cia	:	$(OUTPUT).elf icon.bin banner.bin
-#---------------------------------------------------------------------------------
-ifeq ($(UNAME), Linux)
-	@$(TOPDIR)/tools/linux/makerom -f cia -o $(OUTPUT).cia $(BUILD_ARGS)
-else ifeq ($(UNAME), Darwin)
-	@$(TOPDIR)/tools/osx/makerom -f cia -o $(OUTPUT).cia $(BUILD_ARGS)
-else
-	@$(TOPDIR)/tools/windows/makerom.exe -f cia -o $(OUTPUT).cia $(BUILD_ARGS)
-endif
-	@echo CIA packaged ...
-
-
-#---------------------------------------------------------------------------------
-# you need a rule like this for each extension you use as binary data
-#---------------------------------------------------------------------------------
-%.bin.o	:	%.bin
-#---------------------------------------------------------------------------------
-	@echo $(notdir $<)
-	@$(bin2o)
-
-#---------------------------------------------------------------------------------
-%.jpeg.o :	%.jpeg
-#---------------------------------------------------------------------------------
-	@echo $(notdir $<)
-	@$(bin2o)
-
-#---------------------------------------------------------------------------------
-%.png.o	:	%.png
-#---------------------------------------------------------------------------------
-	@echo $(notdir $<)
-	@$(bin2o)
-
-#---------------------------------------------------------------------------------
-%.json.o :	%.json
-#---------------------------------------------------------------------------------
-	@echo $(notdir $<)
-	@$(bin2o)
-
-#---------------------------------------------------------------------------------
-%.lua.o	:	%.lua
-#---------------------------------------------------------------------------------
-	@echo $(notdir $<)
-	@$(bin2o)
-
-#---------------------------------------------------------------------------------
-# rules for assembling GPU shaders
-#---------------------------------------------------------------------------------
-define shader-as
-	$(eval CURBIN := $(patsubst %.shbin.o,%.shbin,$(notdir $@)))
-	picasso -o $(CURBIN) $1
-	bin2s $(CURBIN) | $(AS) -o $@
-	echo "extern const u8" `(echo $(CURBIN) | sed -e 's/^\([0-9]\)/_\1/' | tr . _)`"_end[];" > `(echo $(CURBIN) | tr . _)`.h
-	echo "extern const u8" `(echo $(CURBIN) | sed -e 's/^\([0-9]\)/_\1/' | tr . _)`"[];" >> `(echo $(CURBIN) | tr . _)`.h
-	echo "extern const u32" `(echo $(CURBIN) | sed -e 's/^\([0-9]\)/_\1/' | tr . _)`_size";" >> `(echo $(CURBIN) | tr . _)`.h
-endef
-
-%.shbin.o : %.v.pica %.g.pica
-	@echo $(notdir $^)
-	@$(call shader-as,$^)
-
-%.shbin.o : %.v.pica
-	@echo $(notdir $<)
-	@$(call shader-as,$<)
-
-%.shbin.o : %.shlist
-	@echo $(notdir $<)
-	@$(call shader-as,$(foreach file,$(shell cat $<),$(dir $<)/$(file)))
-
--include $(DEPENDS)
-
-#---------------------------------------------------------------------------------------
-endif
-#---------------------------------------------------------------------------------------
+icon:
+	@$(bannertool) makesmdh \
+	-s "$(APP_TITLE)" \
+	-l "$(APP_DESCRIPTION)" \
+	-p "$(APP_AUTHOR)" \
+	-i "$(APP_ICON)" \
+	-f "$(ICON_FLAGS)" \
+	-o "$(BUILD)/icon.icn"
