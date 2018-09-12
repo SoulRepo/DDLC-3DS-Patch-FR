@@ -42,8 +42,8 @@ function drawSplash()
 		if persistent.ptr == 2 and random_msgchance == 0 then
 			lg.print(splash_messages[random_msg], 95, 100)
 		else
-			lg.print('This game is not suitable for children', 95, 100)
-			lg.print('  or those who are easily disturbed.', 95, 116)
+			lg.print('Ce jeu n\'est pas adapté au enfant', 95, 100)
+			lg.print('  ou au âmes sensibles.', 95, 116)
 		end
 		
 	elseif state == 'title' then --title (Title Screen)
@@ -53,7 +53,7 @@ function drawSplash()
 		lg.draw(background_Image, posX, posY)
 		lg.draw(titlebg, 0, titlebg_ypos-240)
 		lg.setColor(64,64,64,alpha)
-		lg.print('Unofficial port by LukeeGD',240,5)
+		lg.print('Portage non-officiel par LukeeGD, Patch FR créer par la Team Yarashii et appliqué par Muda42',240,5)
 		drawBottomScreen()
 		menu_draw()
 	end
@@ -105,7 +105,7 @@ function drawSplashspec(spec)
 			lg.draw(s_killearly,72,0)
 			lg.setColor(200,200,200)
 			lg.setFont(m1)
-			if s_timer > 600 then lg.print('Now everyone can be happy.',200,100) end
+			if s_timer > 600 then lg.print('Maintenant tout le monde peut être content.',200,100) end
 		elseif state == 'ghostmenu' then
 			lg.draw(titlebg)
 		end

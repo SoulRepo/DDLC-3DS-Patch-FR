@@ -7,7 +7,7 @@ function drawLoad()
 	lg.rectangle('fill',0,0,400,240)
 	lg.setColor(255,255,255)
 	lg.print(err,5,5)
-	if err ~= '' then lg.print('Please delete all save data and try again.\n\nDelete everything in here:\n> '..savedir..'\n\nPress Y to quit',5,35) end
+	if err ~= '' then lg.print('Veuillez supprimer vos sauvegarde et réessayer.\n\nSupprimer tout ici:\n> '..savedir..'\n\nCliquer sur Y pour quitter',5,35) end
 	drawBottomScreen()
 	lg.setColor(0,0,0,alpha)
 	lg.rectangle('fill',-40,0,400,240)
@@ -68,7 +68,7 @@ function checkLoad()
 	
 	local ghostmenu_chance = math.random(0, 63)
 	if persistent.playthrough or settings.animh == nil then
-		err = 'Error!\nOld save data detected, and it is not compatible with this version.'
+		err = 'Erreurr!\nAncienne sauvegarde détectée, elle n\'est pas compatible avec cette version.'
 	elseif persistent.chr.s == 0 and persistent.ptr == 0 then
 		changeState('s_kill_early')
 	elseif ghostmenu_chance == 0 and persistent.ptr == 2 and persistent.chr.s == 0 then
