@@ -25,7 +25,7 @@ function menu_enable(m)
 				chch = i
 			end
 			savenum[i] = chch
-			itemnames[i] = 'Save File '..chch
+			itemnames[i] = 'Sauvegarde '..chch
 			if love.filesystem.isFile('save'..chch..'-'..persistent.ptr..'.sav') then
 				saveindicator[i] = 1
 			else
@@ -35,47 +35,47 @@ function menu_enable(m)
 	end
 	
 	if menu_type == 'mainyesno' then
-		menutext = 'Are you sure you want to return to the main menu?\nThis will lose unsaved progress.'
-		itemnames = {'Yes','No'}
+		menutext = 'Êtes-vous sur de vouloir revenir au menu principal?\nVous allez perdre tout avancement non-sauvegardé.'
+		itemnames = {'Oui','Non'}
 		
 	elseif menu_type == 'quityesno' then
-		menutext = 'Are you sure you want to quit the game?'
+		menutext = 'Êtes-vous sur de vouloir quitter le jeu?'
 		itemnames = {'Yes','No'}
 		
 	elseif menu_type == 'help' then
-		menutext = 'Help'
+		menutext = 'Aide'
 		itemnames = {}
 		
 	elseif menu_type == 'title' then
-		menutext = 'Main Menu'
-		itemnames = {'New Game','Load Game','Settings','Help','Quit'}
+		menutext = 'Menu principal'
+		itemnames = {'Nouvelle partie','Charger partie','Paramètres','Aide','Quitter'}
 		if persistent.ptr == 1 then itemnames[1] = glitchtext(10) end
 		
 	elseif menu_type == 'settings' then
-		menutext = 'Settings'
+		menutext = 'Paramètres'
 		if pagenum == 1 then
-			itemnames = {'Textbox Location','Text Speed','Auto-Forward Time','Show Date&Time','Characters','Save Settings'}
+			itemnames = {'Emplacement du texte','Vitesse du texte','Auto-Forward Time','Afficher heure&date','Personnages','Sauvegarder les paramètres'}
 		elseif pagenum == 2 then
-			itemnames = {'Char. Animations','Save Settings'}
+			itemnames = {'Animations des personnages','Sauvegarder les paramètres'}
 		end
 		
 	elseif menu_type == 'settings2' then
-		menutext = 'Settings'
-		itemnames = {'Textbox Location','Show Date&Time','Char. Animations','Characters','Save Settings'}
+		menutext = 'Paramètres'
+		itemnames = {'Emplacement du texte','Afficher heure&date','Animations des personnages','Personnages','Sauvegarder les paramètres'}
 	
 	elseif menu_type == 'characters' then
-		menutext = 'Characters'
-		itemnames = {'Delete monika.chr','Delete natsuki.chr','Delete sayori.chr','Delete yuri.chr','Restore all'}
+		menutext = 'Personnages'
+		itemnames = {'Supprimer monika.chr','Supprimer natsuki.chr','Supprimer sayori.chr','Supprimer yuri.chr','Restaurer tous'}
 	
 	elseif menu_type == 'pause' or menu_type == 'pause2' then
-		menutext = 'Game Menu'
-		itemnames = {'Save Game','Load Game','Main Menu','Settings','Help','Quit','Return'}
+		menutext = 'Menu de jeu'
+		itemnames = {'Sauvegarder partie','Charger partie','Menu principal','Paramètres','Aide','Quitter','Retour'}
 	
 	elseif menu_type == 'savegame' then
-		menutext = 'Save Game'
+		menutext = 'Sauvegarder partie'
 	
 	elseif menu_type == 'loadgame' then
-		menutext = 'Load Game'
+		menutext = 'Charger partie'
 		
 	elseif menu_type == 'dialog' then
 		itemnames = {'OK'}
@@ -121,7 +121,7 @@ function menu_draw()
 	
 	if menu_type == 'settings' or menu_type == 'settings2' then
 		if menu_type == 'settings' and pagenum == 1 then
-			lg.print('Page 1 of 2',220,12)
+			lg.print('Page 1 sur 2',220,12)
 			lg.print('(<) X | Y (>)',223,27)
 			lg.print(settings.textloc..' Screen',140, 45)
 			lg.print(settings.textspd, 157, 70)
@@ -133,7 +133,7 @@ function menu_draw()
 			lg.print(settings.dtym,140, 120)
 			
 		elseif menu_type == 'settings' and pagenum == 2 then
-			lg.print('Page 2 of 2',220,12)
+			lg.print('Page 2 sur 2',220,12)
 			lg.print('(<) X | Y (>)',223,27)
 			lg.print(settings.animh, 140, 45)
 			
@@ -142,11 +142,11 @@ function menu_draw()
 			lg.print(settings.dtym,140, 70)
 			lg.print(settings.animh, 140, 95)
 		end
-		lg.print('Press (<) and (>) to change settings.',16,188)
-		lg.print('DDLC-3DS '..dversion..' '..dvertype,16, 203)
+		lg.print('Cliquer sur (<) et (>) pour changer les paramètres.',16,188)
+		lg.print('DDLC-3DS + Patch FR '..dversion..' '..dvertype,16, 203)
 		
 	elseif menu_type == 'savegame' or menu_type == 'loadgame' then
-		lg.print('Page '..pagenum..' of 10',220,12)
+		lg.print('Page '..pagenum..' sur 10',220,12)
 		lg.print('(<) X | Y (>)',230,27)
 		for i = 1, 6 do
 			if saveindicator[i] == 1 then
@@ -167,13 +167,13 @@ function menu_draw()
 		lg.rectangle('fill',14,180,260,30)
 		lg.setColor(0,0,0)
 		lg.print('Key Bindings:',16,30)
-		lg.print('A, L Trigger - Advances through the game,',16,45)
-		lg.print('activates menu choices',90,60)
-		lg.print('B - Exit Menu, AutoForward On/Off',16,80)
-		lg.print('X - (Menu) Previous Page, (Hold) Skip',16,100)
-		lg.print('Y - (Menu) Next Page, Enter Game Menu',16,120)
-		lg.print('Managing files: Go to Settings > Characters',16,150)
-		lg.print('Deleting save data: Delete everything in here',16,180)
+		lg.print('A, L Trigger - Avancer dans le jeu,',16,45)
+		lg.print('active les choix du menu',90,60)
+		lg.print('B - Sortir du menu, AutoForward On/Off',16,80)
+		lg.print('X - (Menu) Page précédente, (Hold) Skip',16,100)
+		lg.print('Y - (Menu) Prochaine page, Entrer dans le menu de jeu',16,120)
+		lg.print('Gérer les fichiers: Paramètres > Personnages',16,150)
+		lg.print('Supprimer les auvegardes: Supprimer tout ici:',16,180)
 		lg.print('> '..savedir,16,195)
 		
 	elseif menu_type == 'pause' or menu_type == 'pause2' then
@@ -234,7 +234,7 @@ function menu_confirm()
 			changeState('game',2)
 		else
 			menu_enable(menu_previous)
-			menutext = 'Save File '..savenumber..' does not exist.'
+			menutext = 'Sauvegarde '..savenumber..' n\'éxiste pas.'
 		end
 		
 	elseif menu_type == 'savegame' then  --save game confirm 
@@ -259,7 +259,7 @@ function menu_confirm()
 			end
 		elseif m_selected <= 5 and menu_type == 'pause2' then
 			if m_selected == 2 and chapter == 30 then
-				menutext = "There's no point in saving anymore.\nDon't worry, I'm not going anywhere."
+				menutext = "Sauvegarder ne sert plus à rien.\nNe t'inquiète pas, jene vais nulle part."
 			elseif m_selected == 5 then
 				menu_enable('settings2')
 			end
@@ -386,13 +386,13 @@ function menu_keypressed(key)
 		
 	elseif key == 'left' or key == 'cpadleft' then
 		if menu_type == 'settings' and m_selected <= 5 and pagenum == 1 then
-			if cpick == 'Textbox Location' then
-				if settings.textloc == 'Bottom' then
-					settings.textloc = 'Top'
+			if cpick == 'Emplacement du texte' then
+				if settings.textloc == 'Bas' then
+					settings.textloc = 'Haut'
 				else
-					settings.textloc = 'Bottom'
+					settings.textloc = 'Bas'
 				end
-			elseif cpick == 'Text Speed' then
+			elseif cpick == 'Vitesse du texte' then
 				if settings.textspd > 250 then
 					settings.textspd = 250
 				elseif settings.textspd > 50 then
@@ -402,7 +402,7 @@ function menu_keypressed(key)
 				if settings.autospd > 1 then
 					settings.autospd = settings.autospd - 1
 				end
-			elseif cpick == 'Show Date&Time' then
+			elseif cpick == 'Afficher heure&date' then
 				if settings.dtym == 0 then
 					settings.dtym = 1
 				else
@@ -411,7 +411,7 @@ function menu_keypressed(key)
 			end
 			
 		elseif menu_type == 'settings' and m_selected <= 2 and pagenum == 2 then
-			if cpick == 'Char. Animations' then
+			if cpick == 'Animations des personnages' then
 				if settings.animh == 0 then
 					settings.animh = 1
 				else
@@ -420,19 +420,19 @@ function menu_keypressed(key)
 			end
 			
 		elseif menu_type == 'settings2' and m_selected <= 4 then
-			if cpick == 'Textbox Location' then
-				if settings.textloc == 'Bottom' then
-					settings.textloc = 'Top'
+			if cpick == 'Emplacement du texte' then
+				if settings.textloc == 'Bas' then
+					settings.textloc = 'Haut'
 				else
-					settings.textloc = 'Bottom'
+					settings.textloc = 'Bas'
 				end
-			elseif cpick == 'Show Date&Time' then
+			elseif cpick == 'Afficher heure&date' then
 				if settings.dtym == 0 then
 					settings.dtym = 1
 				else
 					settings.dtym = 0
 				end
-			elseif cpick == 'Char. Animations' then
+			elseif cpick == 'Animations des personnages' then
 				if settings.animh == 0 then
 					settings.animh = 1
 				else
@@ -443,7 +443,7 @@ function menu_keypressed(key)
 		
 	elseif key == 'right' or key == 'cpadright' then
 		if menu_type == 'settings' and m_selected <= 5 and pagenum == 1 then
-			if cpick == 'Textbox Location' then
+			if cpick == 'Emplacement du texte' then
 				menu_keypressed('left')
 			elseif cpick == 'Text Speed' then
 				if settings.textspd < 250 then
@@ -453,12 +453,12 @@ function menu_keypressed(key)
 				if settings.autospd < 15 then
 					settings.autospd = settings.autospd + 1
 				end
-			elseif cpick == 'Show Date&Time' then
+			elseif cpick == 'Afficher heure&date' then
 				menu_keypressed('left')
 			end
 			
 		elseif menu_type == 'settings' and m_selected <= 2 and pagenum == 2 then
-			if cpick == 'Char. Animations' then
+			if cpick == 'Animations des personnages' then
 				menu_keypressed('left')
 			end
 			
