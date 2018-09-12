@@ -181,7 +181,7 @@ function event_draw()
 			lg.draw(splash)
 		else
 			lg.setColor(0,0,0,alpha)
-			lg.print('Just Monika.', 170, 100)
+			lg.print('Juste Monika.', 170, 100)
 		end
 	end
 	
