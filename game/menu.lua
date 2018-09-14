@@ -123,7 +123,7 @@ function menu_draw()
 		if menu_type == 'settings' and pagenum == 1 then
 			lg.print('Page 1 sur 2',220,12)
 			lg.print('(<) X | Y (>)',223,27)
-			lg.print(settings.textloc..' Screen',140, 45)
+			lg.print(settings.textloc..' ',140, 45)
 			lg.print(settings.textspd, 157, 70)
 			lg.print('(<)',140,70)
 			lg.print('(>)',184,70)
@@ -138,7 +138,7 @@ function menu_draw()
 			lg.print(settings.animh, 140, 45)
 			
 		elseif menu_type == 'settings2' then
-			lg.print(settings.textloc..' Screen',140, 45)
+			lg.print(settings.textloc..' ',140, 45)
 			lg.print(settings.dtym,140, 70)
 			lg.print(settings.animh, 140, 95)
 		end
