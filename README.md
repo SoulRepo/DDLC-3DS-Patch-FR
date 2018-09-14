@@ -12,6 +12,8 @@ Le patch FR utilisé ainsi que la liste des personnes l'ayant fait est disponibl
 
 Si vous souhaitez en connaitre plus sur l'avancement du projet vous pouvez aller ici: https://github.com/Muda42/DDLC-3DS-Patch-FR/projects/2
 
+IMPORTANT: A cause d'un bug impossible à résoudre (Cela impliquerai une réécriture complete du jeu) les caractères spéciaux tel que è ou à ne sont pas compatible avec le jeu. Il seront remplacé par les versions "basiques" des lettres (ç=c). Je m'en excuse par avance.
+
 English:
 
 DDLC-3DS is an unofficial 3DS port of Doki Doki Literature Club!.
@@ -25,3 +27,5 @@ DDLC-3DS was created by LukeeGD and is available here: https://github.com/LukeZG
 The french patch that i use and the list of the people that worked on it are available here: https://www.yarashii.fr/ddlc
 
 If you wish to know more about the project's advancement you can go here: https://github.com/Muda42/DDLC-3DS-Patch-FR/projects/2
+
+IMPORTANT: Because of an unsolvable bug (Fixing it would require the re-writing of the game) the special characters as è or à aren't compatible with the game. They will be replaced by the basic version of the letter (ç=c). Im excuse me in advance.
