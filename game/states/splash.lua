@@ -42,7 +42,7 @@ function drawSplash()
 		if persistent.ptr == 2 and random_msgchance == 0 then
 			lg.print(splash_messages[random_msg], 95, 100)
 		else
-			lg.print('Ce jeu n\'est pas adapté au enfant', 95, 100)
+			lg.print('Ce jeu n\'est pas adapte au enfant', 95, 100)
 			lg.print('  ou au personnes sensibles.', 95, 116)
 		end
 		
@@ -105,7 +105,7 @@ function drawSplashspec(spec)
 			lg.draw(s_killearly,72,0)
 			lg.setColor(200,200,200)
 			lg.setFont(m1)
-			if s_timer > 600 then lg.print('Maintenant tout le monde peut être content.',200,100) end
+			if s_timer > 600 then lg.print('Maintenant tout le monde peut etre content.',200,100) end
 		elseif state == 'ghostmenu' then
 			lg.draw(titlebg)
 		end
