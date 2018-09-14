@@ -43,7 +43,7 @@ function drawSplash()
 			lg.print(splash_messages[random_msg], 95, 100)
 		else
 			lg.print('Ce jeu n\'est pas adapté au enfant', 95, 100)
-			lg.print('  ou au âmes sensibles.', 95, 116)
+			lg.print('  ou au personnes sensibles.', 95, 116)
 		end
 		
 	elseif state == 'title' then --title (Title Screen)
