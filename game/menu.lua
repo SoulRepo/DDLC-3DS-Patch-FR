@@ -35,11 +35,11 @@ function menu_enable(m)
 	end
 	
 	if menu_type == 'mainyesno' then
-		menutext = 'Êtes-vous sur de vouloir revenir au menu principal?\nVous allez perdre tout avancement non-sauvegardé.'
+		menutext = 'etes-vous sur de vouloir revenir au menu principal?\nVous allez perdre tout avancement non-sauvegarde.'
 		itemnames = {'Oui','Non'}
 		
 	elseif menu_type == 'quityesno' then
-		menutext = 'Êtes-vous sur de vouloir quitter le jeu?'
+		menutext = 'etes-vous sur de vouloir quitter le jeu?'
 		itemnames = {'Yes','No'}
 		
 	elseif menu_type == 'help' then
@@ -48,20 +48,20 @@ function menu_enable(m)
 		
 	elseif menu_type == 'title' then
 		menutext = 'Menu principal'
-		itemnames = {'Nouvelle partie','Charger partie','Paramètres','Aide','Quitter'}
+		itemnames = {'Nouvelle partie','Charger partie','Parametres','Aide','Quitter'}
 		if persistent.ptr == 1 then itemnames[1] = glitchtext(10) end
 		
 	elseif menu_type == 'settings' then
-		menutext = 'Paramètres'
+		menutext = 'Parametres'
 		if pagenum == 1 then
-			itemnames = {'Emplacement du texte','Vitesse du texte','Auto-Forward Time','Afficher heure&date','Personnages','Sauvegarder les paramètres'}
+			itemnames = {'Emplacement du texte','Vitesse du texte','Auto-Forward Time','Afficher heure&date','Personnages','Sauvegarder les parametres'}
 		elseif pagenum == 2 then
-			itemnames = {'Animations des personnages','Sauvegarder les paramètres'}
+			itemnames = {'Animations des personnages','Sauvegarder les parametres'}
 		end
 		
 	elseif menu_type == 'settings2' then
-		menutext = 'Paramètres'
-		itemnames = {'Emplacement du texte','Afficher heure&date','Animations des personnages','Personnages','Sauvegarder les paramètres'}
+		menutext = 'Parametres'
+		itemnames = {'Emplacement du texte','Afficher heure&date','Animations des personnages','Personnages','Sauvegarder les parametres'}
 	
 	elseif menu_type == 'characters' then
 		menutext = 'Personnages'
@@ -69,7 +69,7 @@ function menu_enable(m)
 	
 	elseif menu_type == 'pause' or menu_type == 'pause2' then
 		menutext = 'Menu de jeu'
-		itemnames = {'Sauvegarder partie','Charger partie','Menu principal','Paramètres','Aide','Quitter','Retour'}
+		itemnames = {'Sauvegarder partie','Charger partie','Menu principal','Parametres','Aide','Quitter','Retour'}
 	
 	elseif menu_type == 'savegame' then
 		menutext = 'Sauvegarder partie'
@@ -142,7 +142,7 @@ function menu_draw()
 			lg.print(settings.dtym,140, 70)
 			lg.print(settings.animh, 140, 95)
 		end
-		lg.print('Cliquer sur (<) et (>) pour changer les paramètres.',16,188)
+		lg.print('Cliquer sur (<) et (>) pour changer les parametres.',16,188)
 		lg.print('DDLC-3DS + Patch FR '..dversion..' '..dvertype,16, 203)
 		
 	elseif menu_type == 'savegame' or menu_type == 'loadgame' then
@@ -170,9 +170,9 @@ function menu_draw()
 		lg.print('A, L Trigger - Avancer dans le jeu,',16,45)
 		lg.print('active les choix du menu',90,60)
 		lg.print('B - Sortir du menu, AutoForward On/Off',16,80)
-		lg.print('X - (Menu) Page précédente, (Hold) Skip',16,100)
+		lg.print('X - (Menu) Page precedente, (Hold) Skip',16,100)
 		lg.print('Y - (Menu) Prochaine page, Entrer dans le menu de jeu',16,120)
-		lg.print('Gérer les fichiers: Paramètres > Personnages',16,150)
+		lg.print('Gerer les fichiers: Parametres > Personnages',16,150)
 		lg.print('Supprimer les auvegardes: Supprimer tout ici:',16,180)
 		lg.print('> '..savedir,16,195)
 		
@@ -234,7 +234,7 @@ function menu_confirm()
 			changeState('game',2)
 		else
 			menu_enable(menu_previous)
-			menutext = 'Sauvegarde '..savenumber..' n\'éxiste pas.'
+			menutext = 'Sauvegarde '..savenumber..' n\'existe pas.'
 		end
 		
 	elseif menu_type == 'savegame' then  --save game confirm 
@@ -259,7 +259,7 @@ function menu_confirm()
 			end
 		elseif m_selected <= 5 and menu_type == 'pause2' then
 			if m_selected == 2 and chapter == 30 then
-				menutext = "Sauvegarder ne sert plus à rien.\nNe t'inquiète pas, jene vais nulle part."
+				menutext = "Sauvegarder ne sert plus a rien.\nNe t'inquiete pas, jene vais nulle part."
 			elseif m_selected == 5 then
 				menu_enable('settings2')
 			end
