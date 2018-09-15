@@ -3,7 +3,7 @@ function ch0script()
 	if cl == 1 then
 		bgUpdate('residential')
 		audioUpdate('2')
-		cw('???',"Heeeeeeeyyy!!")
+		cw('???',"Heeeeeeeyyy !!")
 	elseif cl == 2 then  
 		cw('bl', 'I see an annoying girl running toward me from the distance, waving her arms in the air like she\'s totally oblivious to any attention she might draw to herself.')
 	elseif cl == 3 then
